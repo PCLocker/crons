@@ -1,0 +1,16 @@
+name: Notification Service
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # Runs at 16:00 UTC = 00:00 SGT
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Notification Webhook
+        run: |
+          echo "Pinging at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          curl -s -H "x-api-key: ${{ secrets.NOTIFICATION_API_KEY }}" "${{ secrets.NOTIFICATION_WEBHOOK_URL }}"
