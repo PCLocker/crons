@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Ping WS
         run: |
-          echo "Pinging ${{ secrets.PING_URL }} at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          curl -s "${{ secrets.PING_URL}}" || echo "Ignore 404 error"
+          echo "Pinging at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          curl -s "${{ secrets.WEBSOCKET_URL}}" || echo "Ignore 404 error"
