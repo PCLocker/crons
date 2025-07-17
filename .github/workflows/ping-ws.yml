@@ -1,0 +1,16 @@
+name: Keep WS Awake
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping WS
+        run: |
+          echo "Pinging ${{ secrets.PING_URL }} at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          curl -s "${{ secrets.PING_URL}" || echo "Ping failed"
