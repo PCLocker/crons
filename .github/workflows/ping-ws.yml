@@ -13,4 +13,4 @@ jobs:
       - name: Ping WS
         run: |
           echo "Pinging ${{ secrets.PING_URL }} at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          curl -s "${{ secrets.PING_URL}" || echo "Ping failed"
+          curl -s "${{ secrets.PING_URL}}" || echo "Ping failed"
