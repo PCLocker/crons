@@ -2,7 +2,7 @@ name: Notification Service
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # Runs at 16:00 UTC = 00:00 SGT
+    - cron: '30 15 * * *'  # Runs at 16:00 UTC = 00:00 SGT
   workflow_dispatch:
 
 jobs:
